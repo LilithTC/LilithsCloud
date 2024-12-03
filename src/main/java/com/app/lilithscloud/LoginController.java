@@ -25,7 +25,7 @@ public class LoginController {
         String password = passwordField.getText();
 
         int userId = DatabaseConnection.loginUser(username, password);
-        String statusMessage = userId != -1 ? "Вы успешно зашли в аккаунт" : "Вы не зашли в аккаунт";
+        String statusMessage = userId != -1 ? "you have successfully logged in." : "you have successfully logged out.";
 
         // Обновляем интерфейс в потоке JavaFX
         Platform.runLater(() -> {

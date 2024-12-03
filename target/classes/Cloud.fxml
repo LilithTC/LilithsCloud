@@ -8,32 +8,40 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.stage.FileChooser?>
 
-<BorderPane fx:id="rootPane" prefHeight="500" prefWidth="500" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.app.lilithscloud.CloudController">
+<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="700" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.lilithscloud.CloudController">
     <center>
-        <VBox spacing="10" alignment="CENTER" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
             <Label text="Загрузить файл:" />
             <TextField fx:id="filePathField" editable="false" />
-            <Button text="Выбрать файл" onAction="#selectFile" />
-            <Button text="Загрузить файл" onAction="#uploadFile" />
+            <Button onAction="#selectFile" prefHeight="25.0" prefWidth="124.0" text="Выбрать файл" />
+            <Button onAction="#uploadFile" prefHeight="25.0" prefWidth="124.0" text="Загрузить файл" />
             <Label text="Список загруженных файлов:" />
             <ListView fx:id="fileListView" prefHeight="200" prefWidth="300" />
-            <Button text="Скачать выбранный файл" onAction="#downloadFile" />
-            <Button text="Удалить выбранный файл" onAction="#deleteFile" />
+            <Button onAction="#downloadFile" prefHeight="25.0" prefWidth="160.0" text="Скачать выбранный файл" />
+            <Button onAction="#deleteFile" prefHeight="25.0" prefWidth="160.0" text="Удалить выбранный файл" />
+            <Button onAction="#refreshPage" prefHeight="25.0" prefWidth="160.0" text="Обновить страницу" /> <!-- Добавленная кнопка -->
+            <Button onAction="#logout" prefHeight="25.0" prefWidth="160.0" text="Выйти">
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </Button>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
         </VBox>
     </center>
     <top>
-        <Label text="Cloud" BorderPane.alignment="CENTER">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="170.0" prefWidth="700.0" style="-fx-background-color: #00000010;" text="Cloud" BorderPane.alignment="CENTER">
             <font>
                 <Font name="Corbel Light" size="30.0" />
             </font>
             <BorderPane.margin>
-                <Insets top="100.0" />
+                <Insets />
             </BorderPane.margin>
         </Label>
     </top>
-    <bottom>
-        <Button onAction="#logout" prefHeight="25.0" prefWidth="162.0" text="Выйти" BorderPane.alignment="CENTER" />
-    </bottom>
 </BorderPane>

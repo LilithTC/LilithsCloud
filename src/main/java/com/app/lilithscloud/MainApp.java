@@ -4,14 +4,17 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.application.HostServices;
 
 public class MainApp extends Application {
 
     private Stage primaryStage;
+    private HostServices hostServices;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
+        this.hostServices = getHostServices();
         showMainWindow();
     }
 
@@ -19,13 +22,14 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow.fxml"));
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Liliths Cloud");
+        primaryStage.setTitle("Liliths Cloud | Main Page ");
         primaryStage.setResizable(false); // Устанавливаем невозможность изменения размера окна
         primaryStage.show();
 
         // Получаем контроллер для настройки перехода к окну входа
         MainWindowController mainWindowController = loader.getController();
         mainWindowController.setMainApp(this);
+        mainWindowController.setHostServices(hostServices);
     }
 
     public void showLoginWindow() throws Exception {
@@ -33,10 +37,10 @@ public class MainApp extends Application {
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Liliths Cloud | Login");
-        primaryStage.setResizable(false); // Устанавливаем невозможность изменения размера окна
+        primaryStage.setResizable(false); //изменения размера окна
         primaryStage.show();
 
-        // Получаем контроллер для настройки перехода к окну регистрации
+        //контроллер для настройки перехода к окну регистрации
         LoginController loginController = loader.getController();
         loginController.setMainApp(this);
     }
@@ -46,10 +50,10 @@ public class MainApp extends Application {
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Liliths Cloud | Register");
-        primaryStage.setResizable(false); // Устанавливаем невозможность изменения размера окна
+        primaryStage.setResizable(false); //изменения размера окна
         primaryStage.show();
 
-        // Получаем контроллер для настройки перехода к окну входа
+        //контроллер для настройки перехода к окну входа
         RegisterController registerController = loader.getController();
         registerController.setMainApp(this);
     }
@@ -59,7 +63,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Liliths Cloud | Cloud");
-        primaryStage.setResizable(false); // Устанавливаем невозможность изменения размера окна
+        primaryStage.setResizable(false); //изменения размера окна
         primaryStage.show();
 
         // Получаем контроллер для настройки выхода из аккаунта

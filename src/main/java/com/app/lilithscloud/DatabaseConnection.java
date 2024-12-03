@@ -11,11 +11,11 @@ import java.util.List;
 public class DatabaseConnection {
 
     // URL для подключения к базе данных
-    private static final String URL = "jdbc:mysql://localhost:3306/test?useSSL=false";
+    private static final String URL = "jdbc:mysql://;
     // Имя пользователя для подключения
-    private static final String USER = "root";
+    private static final String USER = "";
     // Пароль для подключения
-    private static final String PASSWORD = "3312";
+    private static final String PASSWORD = "";
 
     public static void registerUser(String username, String password, String email) throws SQLException {
         String sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";

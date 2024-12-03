@@ -6,32 +6,50 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootPane" prefHeight="500" prefWidth="500" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.app.lilithscloud.LoginController">
+<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="700" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.lilithscloud.LoginController">
     <bottom>
-        <Button onAction="#goToRegisterWindow" prefHeight="25.0" prefWidth="162.0" text="Регистрация" BorderPane.alignment="BASELINE_CENTER" />
     </bottom>
     <center>
-        <GridPane hgap="10" vgap="10" BorderPane.alignment="CENTER">
-            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <GridPane alignment="CENTER" hgap="10" prefHeight="570.0" prefWidth="700.0" vgap="10" BorderPane.alignment="CENTER">
+            <Label prefHeight="17.0" prefWidth="64.0" text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="256.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
             <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <Button text="Login" onAction="#login" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button onAction="#login" prefHeight="25.0" prefWidth="86.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets left="55.0" />
+                </GridPane.margin></Button>
             <Label fx:id="statusLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+            <padding>
+                <Insets bottom="100.0" />
+            </padding>
+
         </GridPane>
     </center>
     <top>
-        <Label text="Login" BorderPane.alignment="CENTER">
+        <Label alignment="CENTER" prefHeight="170.0" prefWidth="700.0" style="-fx-background-color: #00000010;" text="Login" BorderPane.alignment="CENTER">
             <font>
                 <Font name="Corbel Light" size="30.0" />
             </font>
             <BorderPane.margin>
-                <Insets top="100.0" />
+                <Insets />
             </BorderPane.margin>
         </Label>
     </top>

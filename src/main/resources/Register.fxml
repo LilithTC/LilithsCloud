@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootPane" prefHeight="500" prefWidth="500" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.app.lilithscloud.RegisterController">
+<BorderPane fx:id="rootPane" prefHeight="700" prefWidth="700" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.app.lilithscloud.RegisterController">
     <bottom>
         <Button onAction="#goBackToMainWindow" prefHeight="25.0" prefWidth="162.0" text="Войти" BorderPane.alignment="BASELINE_CENTER" />
     </bottom>
